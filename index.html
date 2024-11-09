@@ -6,6 +6,16 @@
 <BODY bgcolor=white>
 <IMG align=left border=0 hspace=30 src= "мерс.jpeg"  width="200" alt="Картинка"/>
 <H1 align = "center">Автомобили </H1>
+    <frameset cols="30%, 40%, 30%">  <!-- Разделение окна по вертикали на 3 фрейма -->
+    <!-- Первый фрейм слева -->
+    <frame src="left.html" name="leftFrame" title="Левый фрейм">
+    
+    <!-- Второй фрейм по центру -->
+    <frame src="center.html" name="centerFrame" title="Центральный фрейм">
+    
+    <!-- Третий фрейм справа -->
+    <frame src="right.html" name="rightFrame" title="Правый фрейм">
+</frameset>
     <h1>Форма для ввода данных</h1>
 
     <form action="/submit_form" method="POST">
