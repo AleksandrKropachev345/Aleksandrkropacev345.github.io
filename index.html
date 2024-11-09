@@ -6,6 +6,35 @@
 <BODY bgcolor=white>
 <IMG align=left border=0 hspace=30 src= "мерс.jpeg"  width="200" alt="Картинка"/>
 <H1 align = "center">Автомобили </H1>
+    <h1>Форма для ввода данных</h1>
+
+    <form action="/submit_form" method="POST">
+        
+        <!-- Текстовое поле -->
+        <label for="name">Ваше имя:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+
+        <!-- Переключатели (радиокнопки) -->
+        <p>Ваш пол:</p>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Мужской</label><br>
+
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Женский</label><br>
+
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Другое</label>
+        <br><br>
+
+        <!-- Раскрывающийся список -->
+        <label for="country">Выберите вашу страну:</label>
+        <select id="country" name="country">
+            <option value="russia">Россия</option>
+            <option value="usa">США</option>
+            <option value="germany">Германия</option>
+            <option value="china">Китай</option>
+        </select>
 <BR>
 <BR>
 <p align = "center"><A HREF="HTML2.htm"> История популярной марки </A></p>
