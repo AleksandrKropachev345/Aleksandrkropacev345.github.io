@@ -15,6 +15,30 @@
       document.write(str1 + str2);
     }
     </script>
+    <script>
+    function showCarPrice() {
+      // Запрашиваем у пользователя марку автомобиля
+      let car = prompt("Введите марку автомобиля (Dodge, Mercedes, BMW, Ford):").trim();
+      
+      // Оператор выбора switch
+      switch (car) {
+        case "Dodge":
+          alert("Цена Dodge: 50,000$");
+          break;
+        case "Mercedes":
+          alert("Цена Mercedes: 70,000$");
+          break;
+        case "BMW":
+          alert("Цена BMW: 60,000$");
+          break;
+        case "Ford":
+          alert("Цена Ford: 40,000$");
+          break;
+        default:
+          alert("Марка автомобиля не найдена. Попробуйте снова.");
+      }
+    }
+  </script>
 <link rel="stylesheet" href="styles.css">
 </head>
 <CENTER> 
@@ -126,6 +150,8 @@ alert(result);
 </script>
 <h1>Нажмите кнопку для выполнения функции</h1>
   <button onclick="concatenateStrings()">Сложить строки</button>
+    <h1>Узнайте цену автомобиля</h1>
+  <button onclick="showCarPrice()">Узнать цену</button>
 
 
 <!DOCTYPE html>
