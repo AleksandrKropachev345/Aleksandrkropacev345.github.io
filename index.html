@@ -245,10 +245,13 @@ alert(result);
 
   <p>Всего студентов: <span id="totalStudents">0</span></p>
   <p>Сдавших зачет: <span id="passedStudents">0</span></p>
-    let dataArray = [42, "Строка", true, null, { key: "value" }];
-document.write("<table border='1'><tr>");
-dataArray.forEach(data => document.write("<td>" + JSON.stringify(data) + "</td>"));
-document.write("</tr></table>");
+    let dataArray = [12, "Строка", true, null, { key: "value" }];
+
+document.write("<h3>Данные массива:</h3>");
+dataArray.forEach((data, index) => {
+    document.write(`<p>Элемент ${index + 1}: ${JSON.stringify(data)}</p>`);
+});
+
 
 <!DOCTYPE html>
 <html lang="ru">
