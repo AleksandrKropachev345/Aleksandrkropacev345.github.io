@@ -5,6 +5,20 @@
 <TITLE>
 Машины
 </TITLE>
+    <script language="JavaScript">
+  function processInput() {
+    let input = document.getElementById("inputField").value;
+    let outputField = document.getElementById("outputField");
+
+    if (isNaN(input) || input.trim() === "") {
+      outputField.value = "Ошибка ввода";
+    } else {
+      let result = Math.pow(Number(input), 2); // Пример: возведение в квадрат
+      outputField.value = "Квадрат числа: " + result;
+    }
+  }
+</script>
+
     <script language="JavaScript" >
     function transferData() {
       let input = document.getElementById("inputField").value;
@@ -163,7 +177,13 @@ alert(result);
     <input type="text" id="outputField" placeholder="Результат">
     <button type="button" onclick="transferData()">Перенести</button>
   </form>
-
+<h1>Проверка ввода и расчет</h1>
+  <form>
+    <label for="inputField">Введите число:</label>
+    <input type="text" id="inputField" placeholder="Введите число">
+    <input type="text" id="outputField" placeholder="Результат" readonly>
+    <button type="button" onclick="processInput()">Проверить</button>
+  </form>
 
 <!DOCTYPE html>
 <html lang="ru">
