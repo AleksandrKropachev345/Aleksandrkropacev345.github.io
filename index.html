@@ -5,6 +5,12 @@
 <TITLE>
 Машины
 </TITLE>
+    <script language="JavaScript" >
+    function transferData() {
+      let input = document.getElementById("inputField").value;
+      document.getElementById("outputField").value = input;
+    }
+  </script>
     <script language="JavaScript"> 
     function concatenateStrings() {
     
@@ -152,6 +158,11 @@ alert(result);
   <button onclick="concatenateStrings()">Сложить строки</button>
     <h1>Узнайте цену автомобиля</h1>
   <button onclick="showCarPrice()">Узнать цену</button>
+    <form>
+    <input type="text" id="inputField" placeholder="Введите текст">
+    <input type="text" id="outputField" placeholder="Результат">
+    <button type="button" onclick="transferData()">Перенести</button>
+  </form>
 
 
 <!DOCTYPE html>
