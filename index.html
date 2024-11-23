@@ -5,6 +5,47 @@
 <TITLE>
 Машины
 </TITLE>
+      <script language="JavaScript">
+    let students = [];
+
+    function addStudent() {
+      let name = document.getElementById("name").value.trim();
+      let score = parseInt(document.getElementById("score").value);
+
+      if (name === "" || isNaN(score)) {
+        alert("Ошибка ввода. Проверьте данные.");
+        return;
+      }
+
+      students.push({ name, score });
+      students.sort((a, b) => a.name.localeCompare(b.name)); // Сортировка по алфавиту
+      displayStudents();
+    }
+
+    function displayStudents() {
+      let table = document.getElementById("studentTable");
+      table.innerHTML = ""; // Очищаем таблицу
+
+      let totalScore = 0;
+      let passedCount = 0;
+
+      students.forEach(student => {
+        totalScore += student.score;
+        let isPassed = student.score >= 60;
+        if (isPassed) passedCount++;
+
+        table.innerHTML += `
+          <tr>
+            <td>${student.name}</td>
+            <td>${student.score}</td>
+            <td>${isPassed ? "Зачет" : "Не зачет"}</td>
+          </tr>`;
+      });
+
+      document.getElementById("totalStudents").textContent = students.length;
+      document.getElementById("passedStudents").textContent = passedCount;
+    }
+  </script>
     <script language="JavaScript">
   function processInput() {
     let input = document.getElementById("inputField").value;
@@ -184,7 +225,26 @@ alert(result);
     <input type="text" id="outputField" placeholder="Результат" readonly>
     <button type="button" onclick="processInput()">Проверить</button>
   </form>
+<h1>Данные студентов</h1>
+  <form onsubmit="addStudent(); return false;">
+    <input type="text" id="name" placeholder="Фамилия">
+    <input type="number" id="score" placeholder="Баллы">
+    <button type="submit">Добавить</button>
+  </form>
 
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Фамилия</th>
+        <th>Баллы</th>
+        <th>Статус</th>
+      </tr>
+    </thead>
+    <tbody id="studentTable"></tbody>
+  </table>
+
+  <p>Всего студентов: <span id="totalStudents">0</span></p>
+  <p>Сдавших зачет: <span id="passedStudents">0</span></p>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
