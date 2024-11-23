@@ -12,6 +12,15 @@
 <IMG align=left border=0 hspace=30 src= "мерс.jpeg"  width="200" alt="Картинка"/>
 <H1 align = "center">Автомобили </H1>
     <h1>Форма для ввода данных</h1>
+let age = parseInt(prompt("Введите ваш возраст:"));
+
+if (isNaN(age)) {
+  console.log("Пожалуйста, введите корректное число.");
+} else if (age >= 18) {
+  console.log("Вам 18 лет или больше.");
+} else {
+  console.log("Вам меньше 18 лет.");
+}
 
     <form action="/submit_form" method="POST">
         
