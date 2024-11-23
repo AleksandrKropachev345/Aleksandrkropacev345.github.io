@@ -24,18 +24,27 @@
     <h1>Форма для ввода данных</h1>
    <script language="JavaScript"> 
 while (true) {
-  let input = prompt("Введите ваш возраст:"); // Запрашиваем ввод
-  let age = parseInt(input);
-  if (!isNaN(age)) {
+  let input = prompt("Введите ваш возраст:"); // Запрос ввода
+  
+  if (input === null || input.trim() === "") {
+    // Если пользователь нажал "Отмена" или оставил поле пустым
+    console.log("Вы не ввели возраст. Попробуйте снова.");
+    continue;
+  }
+
+  let age = parseInt(input); // Преобразование строки в число
+
+  if (isNaN(age)) {
+    // Если ввод некорректен
+    console.log("Пожалуйста, введите корректное число.");
+  } else {
+    // Проверка возраста
     if (age >= 18) {
       console.log("Вам 18 лет или больше.");
     } else {
       console.log("Вам меньше 18 лет.");
     }
-    break; 
-  } else {
-  
-    console.log("Пожалуйста, введите корректное число.");
+    break; // Прерываем цикл после успешной проверки
   }
 }
    </script>
